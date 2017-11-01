@@ -104,4 +104,26 @@ class RedBlackSearchTree<K: Comparable, T: Comparable> {
         return get(h: root, key: key)
     }
     
+    private func traverse(node: Node<K, T>?, vals: inout [K]) {
+
+        if (node == nil) {
+            return
+        }
+        
+        // left
+        traverse(node: node?.left, vals: &vals)
+        // root
+        vals.append(node!.key)
+        // right
+        traverse(node: node?.right, vals: &vals)
+    
+    }
+    
+    // In order traversal
+    func traverse() -> [K] {
+        var vals = [K]()
+        traverse(node: root, vals: &vals)
+        return vals
+    }
+    
 }

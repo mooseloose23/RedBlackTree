@@ -29,6 +29,10 @@ class Tests {
         assert(tree.get(key: "M") == 8, "Should be 8")
         assert(tree.get(key: "L") == 10, "Should be 10")
         
+        
+        // traverse the tree
+        print(tree.traverse())
+        
         print("Test passes!")
         
     }
